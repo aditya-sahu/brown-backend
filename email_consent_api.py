@@ -1,4 +1,8 @@
 from flask import Blueprint, jsonify
+from pydantic import BaseModel, EmailStr
+class Email_Consent(BaseModel):
+    email: EmailStr
+    party_code: str
 
 email_consent_api = Blueprint('email_consent_api', __name__) 
 

@@ -14,6 +14,9 @@ app.register_blueprint(join_party_api)
 from email_consent_api import email_consent_api
 app.register_blueprint(email_consent_api)
 
+from login_api import login_api
+app.register_blueprint(login_api)
+
 def generate_party_code(username, email, party_name):
     combined_input = f"{username}{email}{party_name}"
     party_code = hashlib.sha256(combined_input.encode()).hexdigest()[:8]
@@ -59,11 +62,6 @@ def create_party_code():
 
     except ValidationError as e:
         return jsonify({'error': str(e)}), 400
-
-class Email_Consent(BaseModel):
-    email: EmailStr
-    party_code: str
-
 
 if __name__ == '__main__':
     app.run(debug = True)
