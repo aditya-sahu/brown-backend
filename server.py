@@ -5,6 +5,8 @@ from flask import Flask, request, jsonify
 from pymongo import MongoClient
 client = MongoClient("mongodb://localhost:27017/")
 db = client["brown-backend-db"]
+
+
 app = Flask(__name__)
 
 
@@ -46,7 +48,8 @@ def create_party_code():
                 "party_code": party_code,
                 "party_name": new_party.party_name,
                 "user_count": 1
-            }
+            },
+            "users": []
         })
         return jsonify({'party_code': party_code})
 
