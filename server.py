@@ -15,6 +15,10 @@ class Create_Party(BaseModel):
     email: EmailStr
     party_name: str
 
+@app.route('/')
+def home():
+    return jsonify({"status":"Running!"})
+
 @app.route('/generate_party_code', methods=['POST'])
 def create_party_code():
 
