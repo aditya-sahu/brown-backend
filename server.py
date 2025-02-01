@@ -1,14 +1,13 @@
 import hashlib
 from pydantic import BaseModel, ValidationError, EmailStr
-from flask import Flask, request, jsonify
-
-from pymongo import MongoClient
-client = MongoClient("mongodb://localhost:27017/")
-db = client["brown-backend-db"]
+from flask import Flask, request, jsonify, abort
+from db import db
 
 
 app = Flask(__name__)
 
+from join_party import join_party_api
+app.register_blueprint(join_party_api)
 
 def generate_party_code(username, email, party_name):
     combined_input = f"{username}{email}{party_name}"
@@ -55,6 +54,7 @@ def create_party_code():
 
     except ValidationError as e:
         return jsonify({'error': str(e)}), 400
+
 
 
 if __name__ == '__main__':
