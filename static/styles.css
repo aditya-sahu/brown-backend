@@ -1,0 +1,370 @@
+:root {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.hill {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: #46964d;
+    z-index: 0;
+    clip-path: polygon(
+        -10% 100%,
+        0% 100%,
+        5% 90%,
+        15% 70%,
+        20% 45%,
+        25% 35%,
+        30% 40%,
+        35% 50%,
+        40% 35%,
+        45% 25%,
+        50% 30%,
+        55% 40%,
+        60% 35%,
+        65% 45%,
+        70% 55%,
+        75% 65%,
+        80% 60%,
+        85% 65%,
+        90% 75%,
+        95% 85%,
+        100% 100%,
+        110% 100%
+    );
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.home_container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 40px;
+    text-align: center;
+}
+
+
+.arcade-title {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.arcade-subtitle {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.arcade-button {
+    width: clamp(200px, 80%, 250px);
+    height: auto;
+    padding: 1rem;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.create-btn {
+    background: #FFD700;
+    color: #2c3e50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.join-btn {
+    background: #4169E1;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.arcade-button:hover {
+    transform: translateY(-3px);
+}
+
+.tables-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.table-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    border: 2px solid #FFD700;
+    height: fit-content;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.cars-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.total-apps {
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.progress-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+    max-height: 300px;
+}
+
+.progress-table th {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #FFD700;
+    font-size: 12px;
+}
+
+.progress-table td {
+    padding: 8px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+}
+
+.graph-container {
+    position: fixed;
+    bottom: 0px;
+    left: 20px;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+}
+
+.number-line {
+    width: 98%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.8);
+    position:relative
+}
+
+.number-markers {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.marker {
+    position: relative;
+    width: 2px;
+    height: 10px;
+    left: -2px;
+    background: #FFD700;
+}
+
+.marker-number {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.party-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.login-btn {
+    background: #d02418;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 2px solid #FFD700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+}
+
+.arcade-input {
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #FFD700;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.arcade-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: none;
+}
+
+.arcade-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
+}
+.join-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.consent-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.arcade-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #FFD700;
+}
+
+.consent-label {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.error-message {
+    color: #ff4444;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    margin: 10px 0;
+    text-align: center;
+    display: none;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+
+.car {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    transform: scale(-1, 1);
+}
+
+.blue-car {
+    bottom: 45%;
+    left: 20%;
+    transform: rotate(-25deg) scale(-1, 1);
+    top: 120px;
+}
+
+.red-car {
+    bottom: 35%;
+    left: 45%;
+    transform: rotate(20deg) scale(-1, 1);
+    top: 70px;
+}
+
+.yellow-car {
+    bottom: 40%;
+    left: 65%;
+    transform: rotate(30deg) scale(-1, 1);
+    top: 148px;
+}
+
+.car-label {
+    position: absolute;
+    color: #FFD700;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    transform: translateX(-50%);
+}
+
+.yellow-label {
+    bottom: 40%;
+    left: 67%;
+}
+
+.red-label {
+    bottom: 60%;
+    left: 47%;
+}
+
+.blue-label {
+    bottom: 50%;
+    left: 22%;
+}

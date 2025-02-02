@@ -1,0 +1,2 @@
+brown-backend.pem
+ssh -i "brown-backend.pem" ubuntu@ec2-52-91-14-36.compute-1.amazonaws.com

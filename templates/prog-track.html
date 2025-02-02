@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hill"></div>
+    <div class="cars-container">
+        <img src="bluecar.png" alt="Blue Car" class="car blue-car">
+        <span class="car-label blue-label">Bob</span>
+        <img src="redcar.png" alt="Red Car" class="car red-car">
+        <span class="car-label red-label">Mary</span>
+        <img src="yellowcar.png" alt="Yellow Car" class="car yellow-car">
+        <span class="car-label yellow-label">You</span>
+    </div>
+<!-- ...existing code... -->
+    <div class="container">
+        <h1 class="arcade-title">PROGRESS TRACKER</h1>
+        <div class="tables-container">
+            <!-- User Progress Table -->
+            <div class="table-wrapper">
+                <h2 class="table-title">Your Progress</h2>
+                <p class="total-apps">Total: 45 Applications</p>
+                <table class="progress-table">
+                    <thead>
+                        <tr>
+                            <th>Week</th>
+                            <th>Applications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Week 1</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Week 2</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Week 3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Week 4</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Party Weekly Progress Table -->
+            <div class="table-wrapper">
+                <h2 class="table-title">Your Party's Progress</h2>
+                <table class="progress-table">
+                    <thead>
+                        <tr>
+                            <th>Player</th>
+                            <th>Week 1</th>
+                            <th>Week 2</th>
+                            <th>Week 3</th>
+                            <th>Week 4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>You</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td>12</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>6</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Bob</td>
+                            <td>7</td>
+                            <td>9</td>
+                            <td>11</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <!-- Total Parties Progress Table -->
+            <div class="table-wrapper">
+                <h2 class="table-title">Total Parties Progress</h2>
+                <table class="progress-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Party Name</th>
+                            <th>Total Apps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>You
+                            </td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Mary</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Bob</td>
+                            <td>30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="graph-container">
+        <div class="number-line">
+            <div class="number-markers">
+                <div class="marker">
+                    <span class="marker-number">0</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-number">5</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-number">10</span>
+                </div>
+                <div class="marker">
+                    <span class="marker-number">15</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

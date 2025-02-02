@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Arcade Party</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hill"></div>
+    <div class="container">
+        <h1 class="arcade-title">CREATE PARTY</h1>
+        <div class="login-form">
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" class="arcade-input" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" class="arcade-input" placeholder="Enter email">
+            </div>
+            <div id="error-message" class="error-message"></div>
+            <button class="arcade-button login-btn" onclick="partycreated()">Create Party</button>
+        </div>
+    </div>
+
+    <script>
+        const errorMessage = document.getElementById('error-message');
+        function isValidEmail(email) {
+            const pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            return pattern.test(email);
+        }
+        function partycreated() {
+            if (!isValidEmail(document.getElementById('email').value)) {
+                errorMessage.textContent = "⚠️ Please enter a valid email address";
+                errorMessage.style.display = 'block';
+            } else {
+                window.location.href = 'prog-track.html';
+            }
+        }
+    </script>
+</body>
+</html>

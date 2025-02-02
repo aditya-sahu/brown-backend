@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Party</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="home_container">
+        <h1 class="arcade-title">JOB Quest</h1>
+        <h1 class="arcade-subtitle">Compete with your friends to make job searching fun</h1>
+        <div class="party-section">
+            <div class="top-buttons">
+                <button class="arcade-button create-btn" onclick="createParty()">CREATE PARTY</button>
+                <button class="arcade-button join-btn" onclick="joinParty()">JOIN PARTY</button>
+            </div>
+            <button class="arcade-button login-btn" onclick="login()">LOGIN</button>
+        </div>
+    </div>
+
+    <script>
+        function createParty() {
+            window.location.href = "{{ url_for('create_party') }}";  
+        }
+    
+        function joinParty() {
+            window.location.href = "{{ url_for('join_party') }}";  
+        }
+    
+        function login() {
+            window.location.href = "{{ url_for('login') }}";  
+        }
+    </script>
+    
+</body>
+</html>

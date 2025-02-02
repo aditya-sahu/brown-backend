@@ -1,11 +1,11 @@
 import hashlib
 from pydantic import BaseModel, ValidationError, EmailStr
-from flask import Flask, request, jsonify, abort
+from flask import Flask, request, jsonify, abort, render_template
 from db import db
 from pymongo import MongoClient
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 from join_party import join_party_api
 app.register_blueprint(join_party_api)
@@ -30,6 +30,23 @@ class Create_Party(BaseModel):
 @app.route('/')
 def home():
     return jsonify({"status":"Running!"})
+
+@app.route("/home")
+def landing_page():
+    return render_template("home.html")  # Serve index.html
+
+@app.route("/create-party")
+def create_party():
+    return render_template("partycreation.html")  # Serves party creation page
+
+@app.route("/join-party")
+def join_party():
+    return render_template("join-party.html")  # Serves join party page
+
+@app.route("/login")
+def login():
+    return render_template("login.html")  # Serves login page
+
 
 @app.route('/generate_party_code', methods=['POST'])
 def create_party_code():

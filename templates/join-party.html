@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Party - Arcade Party</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hill"></div>
+    <div class="container">
+        <h1 class="arcade-title">JOIN PARTY</h1>
+        <div class="join-form">
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" class="arcade-input" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" class="arcade-input" placeholder="Enter email">
+            </div>
+            <input type="text" id="partyCode" placeholder="Enter Party Code" class="arcade-input">
+            <div class="consent-group">
+                <input type="checkbox" id="consent" class="arcade-checkbox">
+                <label for="consent" class="consent-label">Do you consent to use your email?</label>
+            </div>
+            <div id="error-message" class="error-message"></div>
+            <button class="arcade-button join-btn" onclick="checkAndJoin()">JOIN</button>
+        </div>
+    </div>    
+    <script>
+        function isValidEmail(email) {
+            const pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            return pattern.test(email);
+        }
+        function checkAndJoin() {
+            const consent = document.getElementById('consent').checked;
+            const errorMessage = document.getElementById('error-message');                
+            if (!consent) {
+                errorMessage.textContent = "⚠️ Consent is required to join the party";
+                errorMessage.style.display = 'block';
+            } 
+            else if (!isValidEmail(document.getElementById('email').value)) {
+                errorMessage.textContent = "⚠️ Please enter a valid email address";
+                errorMessage.style.display = 'block';
+            } 
+            else if (document.getElementById('partyCode').value.length < 5) {
+                errorMessage.textContent = "⚠️ Party code must be at least 5 characters long";
+                errorMessage.style.display = 'block';
+            } 
+            else {
+                window.location.href = 'prog-track.html';
+            }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    position: relative;
+    overflow: hidden;
+}
+
+.hill {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: #46964d;
+    z-index: 0;
+    clip-path: polygon(
+        -10% 100%,
+        0% 100%,
+        5% 90%,
+        15% 70%,
+        20% 45%,
+        25% 35%,
+        30% 40%,
+        35% 50%,
+        40% 35%,
+        45% 25%,
+        50% 30%,
+        55% 40%,
+        60% 35%,
+        65% 45%,
+        70% 55%,
+        75% 65%,
+        80% 60%,
+        85% 65%,
+        90% 75%,
+        95% 85%,
+        100% 100%,
+        110% 100%
+    );
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+}

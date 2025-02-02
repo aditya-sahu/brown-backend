@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Party - Arcade Party</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hill"></div>
+    <div class="container">
+        <h1 class="arcade-title">PARTY CREATED!</h1>
+        <div class="party-info">
+            <h2>Your Party Code:</h2>
+            <div class="code-display" id="partyCode">XXXX</div>
+            <p>Share this code with your friends to join!</p>
+            <div class="party-link" id="partyLink">https://example.com/party/XXXX</div>
+            <button class="arcade-button copy-btn" onclick="copyLink()">COPY LINK</button>
+        </div>
+    </div>
+</body>
+</html>
