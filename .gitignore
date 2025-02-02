@@ -1,5 +1,6 @@
 #client secret
 client_secret_*
+*.pem
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
