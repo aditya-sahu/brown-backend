@@ -32,6 +32,8 @@
             const email = document.getElementById('email').value;
             // Handle login logic here
             console.log('Login attempt:', { username, email });
+            window.location.href = "{{ url_for('prog_track') }}";
+
         }
     </script>
 </body>
