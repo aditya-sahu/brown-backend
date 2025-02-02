@@ -38,7 +38,7 @@
                 errorMessage.textContent = "⚠️ Please enter a valid email address";
                 errorMessage.style.display = 'block';
             } else {
-                window.location.href = 'prog-track.html';
+                window.location.href = "{{ url_for('prog_track') }}";
             }
         }
     </script>

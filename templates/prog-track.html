@@ -12,11 +12,11 @@
 <body>
     <div class="hill"></div>
     <div class="cars-container">
-        <img src="bluecar.png" alt="Blue Car" class="car blue-car">
+        <img src="{{ url_for('static', filename='bluecar.png') }}" alt="Blue Car" class="car blue-car">
         <span class="car-label blue-label">Bob</span>
-        <img src="redcar.png" alt="Red Car" class="car red-car">
+        <img src="{{ url_for('static', filename='redcar.png') }}" alt="Red Car" class="car red-car">
         <span class="car-label red-label">Mary</span>
-        <img src="yellowcar.png" alt="Yellow Car" class="car yellow-car">
+        <img src="{{ url_for('static', filename='yellowcar.png') }}" alt="Yellow Car" class="car yellow-car">
         <span class="car-label yellow-label">You</span>
     </div>
 <!-- ...existing code... -->

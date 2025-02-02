@@ -43,6 +43,11 @@ def create_party():
 def join_party():
     return render_template("join-party.html")  # Serves join party page
 
+@app.route("/prog-track")
+def prog_track():
+    return render_template("prog-track.html")  # Serves join party page
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")  # Serves login page
